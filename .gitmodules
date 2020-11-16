@@ -1,0 +1,15 @@
+[submodule "FNA"]
+	path = FNA
+	url = https://github.com/FNA-XNA/FNA
+[submodule "encompass-cs"]
+	path = encompass-cs
+	url = https://gitea.moonside.games/MoonsideGames/encompass-cs.git
+[submodule "encompass3D"]
+	path = encompass3D
+	url = https://gitlab.com/prophet_goddess/encompass3D
+[submodule "Smuggler"]
+	path = Smuggler
+	url = https://gitea.moonside.games/MoonsideGames/Smuggler
+[submodule "Kav"]
+	path = Kav
+	url = https://gitea.moonside.games/MoonsideGames/Kav

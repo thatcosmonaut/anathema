@@ -1,0 +1,34 @@
+<Project>
+	<PropertyGroup>
+		<BaseIntermediateOutputPath>obj\$(MSBuildAnathema)</BaseIntermediateOutputPath>
+	</PropertyGroup>
+	<Import Sdk="Microsoft.NET.Sdk" Project="Sdk.props" />
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetName>Anathema</TargetName>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GenerateTargetFrameworkAttribute>false</GenerateTargetFrameworkAttribute>
+    <LangVersion>8.0</LangVersion>
+    <StartupObject>Anathema.Program</StartupObject>
+    <AssemblyName>Anathema</AssemblyName>
+    <RootNamespace>Anathema</RootNamespace>
+    <TargetLatestRuntimePatch>true</TargetLatestRuntimePatch>
+    <RuntimeIdentifiers>win-x64;osx-x64;linux-x64</RuntimeIdentifiers>
+    <ApplicationIcon />
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Content\**\*.*">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\encompass3D\encompass3D.csproj" />
+    <ProjectReference Include="..\FNA\FNA.Core.csproj" />
+    <ProjectReference Include="..\encompass-cs\encompass-cs\encompass-cs.csproj" />
+    <ProjectReference Include="..\kav\Kav.Core.csproj" />
+    <ProjectReference Include="..\Smuggler\Smuggler.Core.csproj" />
+  </ItemGroup>
+  <Import Project="..\build\CopyFNALibs.targets" />
+  <Import Sdk="Microsoft.NET.Sdk" Project="Sdk.targets" />
+</Project>
