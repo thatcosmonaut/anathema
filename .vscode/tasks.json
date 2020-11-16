@@ -21,7 +21,7 @@
   },
   "tasks": [
     {
-      "label": "Build: Framework Release",
+      "label": "Build: Mono Release",
       "command": "msbuild",
       "args": [
         "-restore:True",
@@ -36,7 +36,7 @@
       "problemMatcher": "$msCompile"
     },
     {
-      "label": "Run: Framework Release",
+      "label": "Run: Mono Release",
       "command": "mono",
       "args": [
         "Anathema.exe"
@@ -56,10 +56,10 @@
       "problemMatcher": []
     },
     {
-      "label": "Build & Run: Framework Release",
+      "label": "Build & Run: Mono Release",
       "dependsOn": [
-        "Build: Framework Release",
-        "Run: Framework Release"
+        "Build: Mono Release",
+        "Run: Mono Release"
       ],
       "dependsOrder": "sequence",
       "type": "shell",
@@ -70,7 +70,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Build: Framework Debug",
+      "label": "Build: Mono Debug",
       "command": "msbuild",
       "args": [
         "-restore:True",
@@ -85,7 +85,7 @@
       "problemMatcher": []
     },
     {
-      "label": "Run: Framework Debug",
+      "label": "Run: Mono Debug",
       "command": "mono",
       "args": [
         "Anathema.exe"
@@ -105,10 +105,10 @@
       "problemMatcher": []
     },
     {
-      "label": "Build & Run: Framework Debug",
+      "label": "Build & Run: Mono Debug",
       "dependsOn": [
-        "Build: Framework Debug",
-        "Run: Framework Debug"
+        "Build: Mono Debug",
+        "Run: Mono Debug"
       ],
       "dependsOrder": "sequence",
       "type": "shell",
@@ -213,6 +213,92 @@
         "Build: Core Release",
         "Run: Core Release"
       ],
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: Framework Debug",
+      "command": "MsBuild.exe",
+      "args": [
+        "-restore:True",
+        "${workspaceFolder}/Anathema.Framework.sln",
+        "-p:Configuration=Debug",
+        "-p:Platform=x64"
+      ],
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: Framework Debug",
+      "command": "Anathema.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/Anathema/bin/Debug/net461"
+      },
+      "type": "process",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build & Run: Framework Debug",
+      "dependsOn": [
+        "Build: Framework Debug",
+        "Run: Framework Debug"
+      ],
+      "dependsOrder": "sequence",
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build: Framework Release",
+      "command": "MsBuild.exe",
+      "args": [
+        "-restore:True",
+        "${workspaceFolder}/Anathema.Framework.sln",
+        "-p:Configuration=Release",
+        "-p:Platform=x64"
+      ],
+      "type": "shell",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run: Framework Release",
+      "command": "Anathema.exe",
+      "options": {
+        "cwd": "${workspaceFolder}/Anathema/bin/Release/net461"
+      },
+      "type": "process",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build & Run: Framework Release",
+      "dependsOn": [
+        "Build: Framework Release",
+        "Run: Framework Release"
+      ],
+      "dependsOrder": "sequence",
       "type": "shell",
       "group": {
         "kind": "build",
