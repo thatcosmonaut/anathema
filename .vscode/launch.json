@@ -2,6 +2,17 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Attach to Framework Debugger",
+      "type": "clr",
+      "request": "launch",
+      "preLaunchTask": "Build: Framework Debug",
+      "program": "${workspaceFolder}/Anathema/bin/Debug/net461/Anathema.exe",
+      "args": [],
+      "cwd": "${workspaceFolder}",
+      "console": "externalTerminal",
+      "internalConsoleOptions": "neverOpen"
+    },
+    {
       "name": "Attach to Core Debugger",
       "type": "coreclr",
       "request": "launch",
